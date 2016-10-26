@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Giphy Weekend Assignment</title>
+    <!-- necessary vendor files -->
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="vendors/angular-route.min.js" charset="utf-8"></script>
+
+    <!-- linked files from the project -->
+    <script src="scripts/module.js" charset="utf-8"></script>
+    <script src="scripts/config.js" charset="utf-8"></script>
+    <script src="scripts/gif.service.js" charset="utf-8"></script>
+    <script src="scripts/fav.service.js" charset="utf-8"></script>
+    <script src="scripts/gif.controller.js" charset="utf-8"></script>
+    <script src="scripts/fav.controller.js" charset="utf-8"></script>
+    <script src="scripts/nav.controller.js" charset="utf-8"></script>
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="vendors/bootstrap.min.css">
+
+    <base href="/" />
+  </head>
+  <body ng-app="giphyApp">
+    <main class="container">
+      <nav class="row" ng-controller="NavController as navCtrl">
+        <div class="col-md-6">
+          <p><a href="/home">Home</a></p>
+        </div>
+        <div class="col-md-6">
+          <p><a href="/favorite">Favorites<span>({{navCtrl.mirror.favoriteCounter.count}})</span></a></p>
+        </div>
+      </nav>
+      <h1>Giphy Fun!</h1>
+      <div ng-view class="row">
+
+      </div>
+      <footer class="row">
+        <p>&copy;Ally Boyd</p>
+      </footer>
+    </main>
+  </body>
+</html>

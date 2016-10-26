@@ -1,0 +1,8 @@
+<div class="row" ng-repeat="gif in faveCtrl.gifs">
+  <div class="col-md-3">
+    <img ng-src="{{gif.url}}" class="img-responsive" alt="An awesome gif" />
+  </div>
+  <div class="col-md-9">
+    <p>{{gif.comment}}</p>
+  </div>
+</div>

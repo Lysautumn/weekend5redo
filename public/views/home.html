@@ -1,0 +1,39 @@
+<div class="col-md-6">
+  <div class="row" ng-repeat="gif in gifCtrl.gifs">
+    <img ng-src="{{gif.images.original.url}}" class="img-responsive" alt="The perfect gif" />
+    <div class="row">
+      <form>
+        <div class="form-group">
+          <label for="comment">Comment</label>
+          <input type="text" class="form-control" id="comment" ng-model="gif.comment" />
+        </div>
+        <button type="submit" class="btn btn-default btn-block btn-info" ng-click="gifCtrl.favoriteGif(gif.images.original.url, gif.comment)">Favorite This!</button>
+      </form>
+    </div>
+    <div class="row">
+      <hr />
+    </div>
+  </div>
+</div>
+<div class="col-md-6">
+  <header class="row">
+    <h2>Giphy time!</h2>
+  </header>
+  <div class="row">
+    <form class="form-inline">
+      <div class="form-group">
+        <label for="keyword">What are you looking for?</label>
+        <input type="text" ng-model="gifCtrl.keywords" class="form-control" id="keyword" />
+      </div>
+      <button type="submit" class="btn btn-default btn-primary" ng-click="gitCtrl.searchAndDisplayGifs()">Search</button>
+    </form>
+  </div>
+  <div class="row">
+    <hr />
+  </div>
+  <div class="row">
+    <form>
+      <button type="submit" class="btn btn-default btn-block btn-warning" ng-click="gifCtrl.displayRandomGif()">Get a Random Gif!</button>
+    </form>
+  </div>
+</div>
